@@ -1,0 +1,28 @@
+# install asdf
+
+# deps asdf node
+sudo apt-get install dirmngr gpg curl gawk
+
+# deps asdf python
+sudo apt update; sudo apt install build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev curl git \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+
+
+# in repo root
+asdf plugin add nodejs
+asdf plugin add python
+asdf plugin add direnv
+asdf install
+
+# direnv
+sudo apt install direnv
+direnv allow
+
+
+asdf plugin-add yarn
+asdf install yarn 1.22.22
+
+
+yarn bootstrap

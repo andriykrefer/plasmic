@@ -7,6 +7,10 @@ REPODIR="$SCRIPTDIR/../../../"
 # 1. Not very useful to have the container delete on-close.
 # 2. Does not persist DB data.
 
+echo SCRIPTDIR $SCRIPTDIR
+echo REPODIR $REPODIR
+# exit
+
 echo "===== BUILDING ====" && \
   docker build -t local/plasmic-dev $SCRIPTDIR && \
   echo " " && \

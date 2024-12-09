@@ -8,7 +8,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # System setup
 RUN apt update
-RUN apt install -y sudo build-essential python3 python3-pip virtualenvwrapper git wget curl screen postgresql
+RUN apt install -y sudo build-essential python3 python3-pip virtualenvwrapper git wget curl screen postgresql postgresql-contrib
 
 ## Node.js
 RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
@@ -32,6 +32,7 @@ cat /etc/sysctl.conf | grep fs.inotify \n\
 exec bash \
 " >> /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
+RUN rm /usr/bin/pip
 RUN ln -s `which pip3` /usr/bin/pip
 
 # Secrets config
